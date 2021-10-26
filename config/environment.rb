@@ -9,5 +9,6 @@ Dir['./config/initializers/*.rb'].sort.each { |file| require file }
 Dir['./app/concerns/*.rb'].sort.each { |file| require file }
 Dir['./app/serializers/*.rb'].sort.each { |file| require file }
 Dir['./app/lib/**/*.rb'].sort.each { |file| require file }
+Dir['./config/consumer.rb'].sort.each { |file| require file }
 
 require './app/application'

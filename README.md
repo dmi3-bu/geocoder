@@ -27,7 +27,7 @@ bundle install
 3. Запустите приложение:
 
 ```
-bundle exec rackup
+bundle exec rackup -p 9294
 ```
 
 # Запуск тестов
