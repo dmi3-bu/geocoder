@@ -1,4 +1,5 @@
 class Application < Sinatra::Base
+  helpers Sinatra::CustomLogger
   include ::ApiErrors
 
   configure :development do
