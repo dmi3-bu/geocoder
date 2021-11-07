@@ -13,6 +13,10 @@ gem 'bunny'
 gem 'faraday'
 gem 'faraday_middleware'
 
+gem 'rack-ougai'
+gem 'rack-request-id'
+gem 'amazing_print'
+
 group :test do
   gem 'rspec'
   gem 'rack-test'
