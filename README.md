@@ -41,3 +41,9 @@ bundle exec rspec
 ```
 bundle exec rake db:seed
 ```
+
+# Деплой
+```
+docker build -t geocoder .
+ansible-playbook deploy/deploy.yml
+```
