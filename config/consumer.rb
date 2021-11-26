@@ -1,6 +1,5 @@
 require './app/lib/rabbit_mq'
 
-
 return if Application.test?
 
 channel = RabbitMq.consumer_channel

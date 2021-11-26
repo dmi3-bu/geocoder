@@ -16,6 +16,7 @@ gem 'faraday_middleware'
 gem 'rack-ougai'
 gem 'rack-request-id'
 gem 'amazing_print'
+gem 'config'
 
 group :test do
   gem 'rspec'

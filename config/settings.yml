@@ -1,0 +1,5 @@
+rabbitmq:
+  host: <%= ENV['RABBITMQ_HOST'] || 'localhost' %>
+  username: <%= ENV['RABBITMQ_USER'] || 'guest' %>
+  password: <%= ENV['RABBITMQ_PASSWORD'] || 'guest' %>
+  consumer_pool: 10
