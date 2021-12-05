@@ -13,6 +13,7 @@ gem 'bunny'
 gem 'faraday'
 gem 'faraday_middleware'
 
+gem 'prometheus-client', '2.1.0'
 gem 'rack-ougai'
 gem 'rack-request-id'
 gem 'amazing_print'

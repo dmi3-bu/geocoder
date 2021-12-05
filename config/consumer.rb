@@ -1,4 +1,5 @@
 require './app/lib/rabbit_mq'
+require 'benchmark'
 
 return if Application.test?
 
@@ -13,8 +14,15 @@ queue.subscribe(manual_ack: true) do |delivery_info, properties, payload|
   Application.logger.info('consumer', city: payload['city'], coordinates: coordinates)
 
   if coordinates.present?
+    Metrics.geocoding_requests_total.increment(labels: {result: 'success'})
     client = AdsService::Client.new
-    client.update_coordinates(payload['id'], coordinates)
+
+    Metrics.geocoder_request_duration_seconds.observe(
+      Benchmark.realtime { client.update_coordinates(payload['id'], coordinates) },
+      labels: { service: 'geocoding' }
+    )
+  else
+    Metrics.geocoding_requests_total.increment(labels: {result: 'failure'})
   end
 
   channel.ack(delivery_info.delivery_tag)

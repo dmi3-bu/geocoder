@@ -84,6 +84,7 @@ GEM
     oj (3.13.9)
     ougai (1.9.1)
       oj (~> 3.10)
+    prometheus-client (2.1.0)
     puma (4.3.8)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -141,6 +142,7 @@ DEPENDENCIES
   faraday
   faraday_middleware
   fast_jsonapi (~> 1.5)
+  prometheus-client (= 2.1.0)
   puma (~> 4.3)
   rack-ougai
   rack-request-id
